@@ -1,5 +1,6 @@
 package com.testing.load.user.domain;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
@@ -19,6 +20,7 @@ public class User {
     @CreatedDate
     private LocalDateTime createdAt;
 
+    @Builder
     public User(String username) {
         this.username = username;
     }
