@@ -1,4 +1,4 @@
-package com.testing.load.order.repostiroy;
+package com.testing.load.order.repository;
 
 import com.testing.load.order.domain.Order;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;

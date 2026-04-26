@@ -1,6 +1,8 @@
 package com.testing.load.product.domain;
 
 import com.testing.load.common.entity.BaseEntity;
+import com.testing.load.common.exception.BusinessException;
+import com.testing.load.common.exception.ErrorCode;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,5 +30,12 @@ public class Product extends BaseEntity {
         this.price = price;
         this.stock = stock;
         this.createdBy = createdBy;
+    }
+
+    public void decrementStock() {
+        if (this.stock <= 0) {
+            throw new BusinessException(ErrorCode.PRODUCT_OUT_OF_STOCK);
+        }
+        this.stock--;
     }
 }
