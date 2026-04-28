@@ -12,6 +12,9 @@ public class FlywayConfig {
 
     @Bean(initMethod = "migrate")
     public Flyway flyway(FlywayProperties flywayProperties) {
+        if (!flywayProperties.enabled()) {
+            return null;
+        }
         return Flyway.configure()
                 .dataSource(
                         flywayProperties.url(),

@@ -3,6 +3,8 @@ package com.testing.load.common.config;
 import com.testing.load.common.properties.AppProperties;
 import com.testing.load.coupon.repository.CouponIssueRepository;
 import com.testing.load.coupon.repository.CouponRepository;
+import com.testing.load.order.repository.OrderRepository;
+import com.testing.load.product.repository.ProductRepository;
 import com.testing.load.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +20,9 @@ public class DataInitializer implements ApplicationRunner {
 
     private final CouponRepository couponRepository;
     private final CouponIssueRepository couponIssueRepository;
+    private final OrderRepository orderRepository;
     private final UserRepository userRepository;
+    private final ProductRepository productRepository;
     private final ReactiveRedisTemplate<String, String> reactiveRedisTemplate;
     private final AppProperties appProperties;
 
@@ -28,20 +32,28 @@ public class DataInitializer implements ApplicationRunner {
             log.info("데이터 초기화 스킵");
             return;
         }
-        // 1. coupon_issues 초기화
+
+        // 1. orders 초기화 (FK 때문에 coupon_issues보다 먼저)
+        orderRepository.deleteAll()
+                .doOnSuccess(r -> log.info("orders 초기화 완료"))
+                .doOnError(e -> log.error("orders 초기화 실패: {}", e.getMessage()))
+                .subscribe();
+
+        // 2. coupon_issues 초기화
         couponIssueRepository.deleteAll()
                 .doOnSuccess(r -> log.info("coupon_issues 초기화 완료"))
                 .doOnError(e -> log.error("coupon_issues 초기화 실패: {}", e.getMessage()))
                 .subscribe();
 
-        // 2. Redis refresh 토큰 초기화 (유저 ID 기반으로 하나씩 삭제)
+        // 3. Redis refresh 토큰 초기화
         userRepository.findAll()
-                .flatMap(user -> reactiveRedisTemplate.delete("refresh:" + user.getId())
-                        .doOnSuccess(r -> log.info("유저 {} refresh 토큰 삭제 완료", user.getId())))
+                .flatMap(user -> reactiveRedisTemplate.delete("refresh:" + user.getId()))
+                .count()
+                .doOnSuccess(count -> log.info("refresh 토큰 초기화 완료: {}개", count))
                 .doOnError(e -> log.error("refresh 토큰 삭제 실패: {}", e.getMessage()))
                 .subscribe();
 
-        // 3. 쿠폰 Redis 재고 초기화
+        // 4. 쿠폰 Redis 재고 초기화
         couponRepository.findAll()
                 .flatMap(coupon -> {
                     String stockKey = "{coupon:" + coupon.getId() + "}:stock";
@@ -55,7 +67,22 @@ public class DataInitializer implements ApplicationRunner {
                                     coupon.getId(), coupon.getName(), coupon.getTotalStock()
                             ));
                 })
-                .doOnError(e -> log.error("Redis 초기화 실패: {}", e.getMessage()))
+                .doOnError(e -> log.error("쿠폰 Redis 초기화 실패: {}", e.getMessage()))
+                .subscribe();
+
+        // 5. 상품 Redis 재고 초기화
+        productRepository.findAll()
+                .flatMap(product -> {
+                    String stockKey = "product:" + product.getId() + ":stock";
+
+                    return reactiveRedisTemplate.opsForValue()
+                            .set(stockKey, String.valueOf(product.getStock()))
+                            .doOnSuccess(r -> log.info(
+                                    "상품 ID: {} 이름: {} 재고: {} Redis 초기화 완료",
+                                    product.getId(), product.getName(), product.getStock()
+                            ));
+                })
+                .doOnError(e -> log.error("상품 Redis 초기화 실패: {}", e.getMessage()))
                 .subscribe();
     }
 }

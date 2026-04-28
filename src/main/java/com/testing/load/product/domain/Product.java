@@ -8,12 +8,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Version;
+import org.springframework.data.domain.Persistable;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Getter
 @NoArgsConstructor
 @Table("products")
-public class Product extends BaseEntity {
+public class Product extends BaseEntity implements Persistable<Long> {
 
     @Id
     private Long id;
@@ -30,6 +31,12 @@ public class Product extends BaseEntity {
         this.price = price;
         this.stock = stock;
         this.createdBy = createdBy;
+    }
+
+    // 낙관적 테스트 용
+    @Override
+    public boolean isNew() {
+        return id == null;
     }
 
     public void decrementStock() {

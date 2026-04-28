@@ -25,6 +25,7 @@ public enum ErrorCode {
     PRODUCT_NOT_FOUND(HttpStatus.NOT_FOUND, "프로젝트를 찾을 수 없습니다." ),
     PRODUCT_OUT_OF_STOCK(HttpStatus.CONFLICT, "상품 재고가 없습니다."),
     COUPON_ISSUE_NOT_FOUND(HttpStatus.NOT_FOUND, "쿠폰 발급 내역을 찾을 수 없습니다."),
+    PRODUCT_ORDER_FAILED(HttpStatus.CONFLICT, "주문 처리에 실패했습니다. 다시 시도해주세요."),
     ;
 
     private final HttpStatus status;

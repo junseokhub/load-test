@@ -31,4 +31,14 @@ public class Order extends BaseEntity {
         this.finalPrice = finalPrice;
         this.status = OrderStatus.PENDING;
     }
+
+    public static Order pending(Long userId, Long productId, Long couponIssueId) {
+        return Order.builder()
+                .userId(userId)
+                .productId(productId)
+                .couponIssueId(couponIssueId)
+                .originalPrice(0)
+                .finalPrice(0)
+                .build();
+    }
 }

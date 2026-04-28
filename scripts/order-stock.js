@@ -1,6 +1,8 @@
 import http from 'k6/http';
 import { check } from 'k6';
 
+const BASE_URL = 'http://localhost:8080';
+
 export const options = {
     setupTimeout: '300s',
     stages: [
@@ -9,7 +11,6 @@ export const options = {
         { duration: '10s', target: 0 },
     ],
     thresholds: {
-        // 에러율 99% 이하 → 409는 에러 아니니까 여유있게
         http_req_failed: ['rate<0.99'],
         http_req_duration: ['p(95)<2000'],
     },
@@ -37,22 +38,21 @@ export function setup() {
 }
 
 export default function (data) {
-    // VU마다 다른 토큰 사용
     const token = data.tokens[__VU % data.tokens.length];
 
     const res = http.post(
-        'http://localhost:8080/api/coupons/1/issue',
-        null,
+        `${BASE_URL}/api/orders`,
+        JSON.stringify({ productId: 1 }),
         {
             headers: {
                 'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             }
         }
     );
 
-    // 201 → 발급 성공
-    // 409 → 중복 or 재고 소진 (정상 비즈니스 로직)
+    // 201 → 주문 성공
+    // 409 → 재고 소진 (정상 비즈니스 로직)
     check(res, {
         'status is 201 or 409': (r) => r.status === 201 || r.status === 409,
     });
