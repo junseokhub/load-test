@@ -5,47 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdca9f9d-f114-4646-9625-2836170aab45" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../virtual-thread/src/main/java/com/mvc/load/common/properties/KafkaProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-thread/src/main/java/com/mvc/load/outbox/Outbox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-thread/src/main/java/com/mvc/load/outbox/OutboxRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-thread/src/main/java/com/mvc/load/outbox/OutboxScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/load.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/consumer/AbstractOrderKafkaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../virtual-thread/src/main/java/com/mvc/load/LoadApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../virtual-thread/src/main/java/com/mvc/load/LoadApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../virtual-thread/src/main/java/com/mvc/load/common/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../virtual-thread/src/main/java/com/mvc/load/common/DataInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../virtual-thread/src/main/java/com/mvc/load/config/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../virtual-thread/src/main/java/com/mvc/load/config/KafkaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../virtual-thread/src/main/java/com/mvc/load/order/consumer/KafkaConsumerSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/../virtual-thread/src/main/java/com/mvc/load/order/consumer/KafkaConsumerSupport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../virtual-thread/src/main/java/com/mvc/load/order/service/KafkaOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../virtual-thread/src/main/java/com/mvc/load/order/service/KafkaOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../virtual-thread/src/main/java/com/mvc/load/order/service/RedisLuaOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../virtual-thread/src/main/java/com/mvc/load/order/service/RedisLuaOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/AtomicUpdateOrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/common/config/FlywayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/common/config/FlywayConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/common/config/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/common/config/KafkaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/common/config/R2dbcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/common/config/R2dbcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/common/exception/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/common/exception/ErrorCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/common/properties/KafkaProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/common/properties/KafkaProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/consumer/KafkaConsumerSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/consumer/KafkaConsumerSupport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/consumer/LuaOrderKafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/consumer/LuaOrderKafkaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/consumer/OptimisticOrderKafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/consumer/OptimisticOrderKafkaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/consumer/OrderConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/consumer/OrderConsumerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/consumer/OrderKafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/consumer/OrderKafkaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/consumer/PessimisticOrderKafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/consumer/PessimisticOrderKafkaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/domain/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/DefaultOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/DefaultOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/KafkaAsyncOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/KafkaAsyncOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/KafkaSyncOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/KafkaSyncOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/OptimisticLockOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/OptimisticLockOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/PessimisticLockOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/PessimisticLockOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/RedisLuaOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/RedisLuaOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/OrderConsumerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/OrderConsumerType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/OrderServiceType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/OrderServiceType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/config/OrderServiceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testing/load/order/service/config/OrderServiceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/V1__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/V1__init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/V3_init_outbox.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +76,65 @@
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.1008127393466502" />
+      <entry key="MS500" value="2.323922041768258" />
+      <entry key="S2" value="4.537882461801287" />
+      <entry key="S5" value="5.7739375777053965" />
+      <entry key="S10" value="6.335799180374605" />
+      <entry key="S30" value="6.765950379554112" />
+      <entry key="S60" value="6.881622369924098" />
+      <entry key="M2" value="6.98545933802202" />
+      <entry key="M5" value="8.095371830312878" />
+      <entry key="M10" value="10.815076897998592" />
+      <entry key="M15" value="12.929380122928379" />
+      <entry key="M30" value="16.356703735887123" />
+      <entry key="H1" value="18.823492583651085" />
+      <entry key="H2" value="20.31078145402498" />
+      <entry key="H4" value="21.12842536720215" />
+      <entry key="D1" value="21.850836029259728" />
+      <entry key="W1" value="21.978593203748506" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9580761820974132" />
+      <entry key="MS500" value="2.261725103544513" />
+      <entry key="S2" value="4.379670316947487" />
+      <entry key="S5" value="5.648688442200119" />
+      <entry key="S10" value="6.2565817569182505" />
+      <entry key="S30" value="6.735013212869356" />
+      <entry key="S60" value="6.865525880095246" />
+      <entry key="M2" value="6.977246350680317" />
+      <entry key="M5" value="8.092001110794477" />
+      <entry key="M10" value="10.813296140864269" />
+      <entry key="M15" value="12.9281362808644" />
+      <entry key="M30" value="16.35603171809669" />
+      <entry key="H1" value="18.823137422055986" />
+      <entry key="H2" value="20.31059792402421" />
+      <entry key="H4" value="21.128331942478308" />
+      <entry key="D1" value="21.850820211852607" />
+      <entry key="W1" value="21.978590937858637" />
+    </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8,
@@ -231,8 +254,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.32098.37" />
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.32098.37" />
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
       </set>
     </attachedChunks>
   </component>
@@ -286,6 +309,7 @@
       <workItem from="1777635041900" duration="162000" />
       <workItem from="1777635449597" duration="12737000" />
       <workItem from="1777660057531" duration="13000" />
+      <workItem from="1781597781787" duration="2407000" />
     </task>
     <servers />
   </component>

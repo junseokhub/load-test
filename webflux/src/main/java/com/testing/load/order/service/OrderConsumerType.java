@@ -4,5 +4,6 @@ public enum OrderConsumerType {
     OPTIMISTIC,
     PESSIMISTIC,
     LUA,
+    ATOMIC,
     NONE
 }

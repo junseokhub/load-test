@@ -5,5 +5,6 @@ public enum OrderServiceType {
     OPTIMISTIC_LOCK,
     PESSIMISTIC_LOCK,
     KAFKA_ASYNC,
+    ATOMIC_UPDATE,
     KAFKA_SYNC,
 }

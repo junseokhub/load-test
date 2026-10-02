@@ -59,11 +59,18 @@ public class OrderServiceConfig {
     }
 
     @Bean
+    public AtomicUpdateOrderService atomicUpdateOrderService() {
+        return new AtomicUpdateOrderService(productRepository, databaseClient, defaultOrderService);
+    }
+
+
+    @Bean
     @Primary
     public OrderService orderService(
             RedisLuaOrderService redisLuaOrderService,
             OptimisticLockOrderService optimisticLockOrderService,
             PessimisticLockOrderService pessimisticLockOrderService,
+            AtomicUpdateOrderService atomicUpdateOrderService,
             KafkaAsyncOrderService kafkaAsyncOrderService,
             KafkaSyncOrderService kafkaSyncOrderService
     ) {
@@ -71,6 +78,7 @@ public class OrderServiceConfig {
             case REDIS_LUA -> redisLuaOrderService;
             case OPTIMISTIC_LOCK -> optimisticLockOrderService;
             case PESSIMISTIC_LOCK -> pessimisticLockOrderService;
+            case ATOMIC_UPDATE -> atomicUpdateOrderService;
             case KAFKA_ASYNC -> kafkaAsyncOrderService;
             case KAFKA_SYNC -> kafkaSyncOrderService;
         };
